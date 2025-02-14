@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import java.lang.annotation.Target;
+//import java.lang.annotation.Target;
 import org.firstinspires.ftc.robotcore.external.navigation.Position;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -69,7 +69,7 @@ public class robot_teleop_full extends LinearOpMode{
             //hand movement
             if (gamepad2.right_bumper) {
                 hand.setPosition(0.78);
-                telemetry.addData("Hand", gamepad1.right_bumper);
+                //telemetry.addData("Hand", gamepad1.right_bumper.toString());
             }
             else {hand.setPosition(0.35);}
 
@@ -137,9 +137,9 @@ public class robot_teleop_full extends LinearOpMode{
             shoulder2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
             //telemetry
-            telemetry.addData("shoulder difference: ", shoulder1.getCurrentPosition()-shoulder2.getCurrentPosition());
+            //telemetry.addData("shoulder difference: ", shoulder1.getCurrentPosition()-shoulder2.getCurrentPosition());
             telemetry.update();
-            telemetry.addData("wrist position", wrist.getPosition());
+            //telemetry.addData("wrist position", wrist.getPosition());
         }
     }
 }
