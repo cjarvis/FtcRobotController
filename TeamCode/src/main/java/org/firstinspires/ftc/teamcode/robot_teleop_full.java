@@ -60,7 +60,7 @@ public class robot_teleop_full extends LinearOpMode{
             //hand movement
             if (gamepad2.right_bumper) {
                 hand.setPosition(0.78);
-                telemetry.addData("Hand", gamepad1.right_bumper);
+//                telemetry.addData("Hand", gamepad1.right_bumper);
             }
             else {hand.setPosition(0.35);}
 
@@ -129,9 +129,9 @@ public class robot_teleop_full extends LinearOpMode{
             shoulder2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
             //telemetry
-            telemetry.addData("shoulder difference: ", shoulder1.getCurrentPosition()-shoulder2.getCurrentPosition());
+//            telemetry.addData("shoulder difference: ", shoulder1.getCurrentPosition()-shoulder2.getCurrentPosition());
             telemetry.update();
-            telemetry.addData("wrist position", wrist.getPosition());
+//            telemetry.addData("wrist position", wrist.getPosition());
         }
     }
 }

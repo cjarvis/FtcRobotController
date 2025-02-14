@@ -67,8 +67,8 @@ public class robot_autonomous_attempt extends LinearOpMode{
 
 
             //////////////TELEMETRY/////////////
-            telemetry.addData("shoulder scale: ", shoulderScale);
-            telemetry.addData("time: ", timer.seconds());
+//            telemetry.addData("shoulder scale: ", shoulderScale);
+//            telemetry.addData("time: ", timer.seconds());
             telemetry.update();
         }
 
@@ -109,7 +109,7 @@ public class robot_autonomous_attempt extends LinearOpMode{
         //grabber
         if (grab) {
             hand.setPosition(0.75);
-            telemetry.addData("Hand", grab);
+//            telemetry.addData("Hand", grab);
         }
         else {hand.setPosition(0.35);}
 
