@@ -7,14 +7,14 @@ import com.qualcomm.robotcore.hardware.Servo;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 class Robot {
-    Servo wrist;
-    Servo hand;
-    DcMotor shoulder1;
-    DcMotor shoulder2;
-    DcMotor rightAntDrive;
-    DcMotor rightPostDrive;
-    DcMotor leftPostDrive;
-    DcMotor leftAntDrive;
+    private final Servo wrist;
+    private final Servo hand;
+    private final DcMotor shoulder1;
+    private final DcMotor shoulder2;
+    private final DcMotor rightAntDrive;
+    private final DcMotor rightPostDrive;
+    private final DcMotor leftPostDrive;
+    private final DcMotor leftAntDrive;
 
     Telemetry telemetry;
 
@@ -82,5 +82,73 @@ class Robot {
         shoulder2.setPower(0.8);
         shoulder2.setTargetPosition(position);
         shoulder2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+    }
+
+    // These are sample positions, feel free to modify
+    enum ArmPosition {
+        initial,
+        travelling,
+
+        // Collecting...
+        collectFromGround,
+        collectFromSubmersible,
+
+        // Specimen placement
+        highChamberReach, // > 26"
+        highChamberHook, // 26"
+
+        lowChamberReach, // >13"
+        lowChamberHook, // 13"
+
+        // Sample placement
+        highBasket, // > 43"
+
+        lowBasket, // > 25.75"
+
+        // Rungs
+        highRung, // 36"
+        lowRung, // 20"
+    }
+
+    public void moveArmToPosition(ArmPosition newPosition) {
+        switch (newPosition) {
+            case initial:
+                break;
+            case travelling:
+                break;
+            case collectFromGround:
+                break;
+            case collectFromSubmersible:
+                break;
+            case highChamberReach:
+                break;
+            case highChamberHook:
+                break;
+            case lowChamberReach:
+                break;
+            case lowChamberHook:
+                break;
+            case highBasket:
+                break;
+            case lowBasket:
+                break;
+            case highRung:
+                break;
+            case lowRung:
+                break;
+        }
+    }
+
+    public void handGrab() {
+        // TODO make the grabber wheel spin
+    }
+
+    public void handGrip() {
+        // the robot has grabbed something, now we maintain just enough power to keep it
+        // TODO
+    }
+
+    public void handRelease() {
+        // TODO make the grabber when reverse
     }
 }

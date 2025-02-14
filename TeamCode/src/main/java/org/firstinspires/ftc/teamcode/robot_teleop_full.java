@@ -51,8 +51,7 @@ public class robot_teleop_full extends LinearOpMode {
                 //wrist
                 robot.setWristPosition(0.18);
 //                robot.setArmPosition(80);
-//                robot.setArmPosition(ArmPosition.Full); // ArmPosition.Ground, Hang, Travel,
-
+                robot.moveArmToPosition(Robot.ArmPosition.initial);
             }
             //pickup position
             if (gamepad2.x) {
@@ -63,6 +62,8 @@ public class robot_teleop_full extends LinearOpMode {
                     shoulderScale = 99;
                 }
                 robot.setWristPosition(0.85);
+
+                robot.moveArmToPosition(Robot.ArmPosition.collectFromGround);
             }
             //reaching position
             if (gamepad2.y) {
@@ -83,6 +84,7 @@ public class robot_teleop_full extends LinearOpMode {
                     shoulderScale -= shoulderIncrement;
                 }
                 robot.setWristPosition(0.33);
+                robot.moveArmToPosition(Robot.ArmPosition.collectFromSubmersible);
             }
 
             //prevent bashing into ground
